@@ -1,0 +1,25 @@
+{
+  "name": "hapiapp",
+  "version": "1.0.0",
+  "description": "simple hapijs app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvenceslas/HapiApp.git"
+  },
+  "author": "Venceslas Burongu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bvenceslas/HapiApp/issues"
+  },
+  "homepage": "https://github.com/bvenceslas/HapiApp#readme",
+  "dependencies": {
+    "hapi": "^18.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
