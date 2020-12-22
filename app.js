@@ -1,5 +1,5 @@
 const Hapi = require('hapi');
-const mongoose = require('mongoose');
+require('./db/dbConnect');
 const Person = require('./model/person.model');
 require('dotenv').config();
 const joi = require('joi');
@@ -9,18 +9,6 @@ const server = new Hapi.Server({
     port: 8000 || process.env. PORT,
     host: 'localhost' || process.env.HOST
 });
-
-// connect to the mongo DB
-mongoose.connect(process.env.DB_URI, {
-    useCreateIndex:true, 
-    useFindAndModify:false, 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-    },() => {
-        console.log('connected to mongoDB ...');
-    }
-);
-
 
 server.route({
     method:'POST',
