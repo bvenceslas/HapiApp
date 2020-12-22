@@ -1,6 +1,7 @@
 const Hapi = require('hapi');
 const mongoose = require('mongoose');
 const joi = require('joi');
+const Person = require('./model/person.model');
 
 // initialise server
 const server = new Hapi.Server({
@@ -15,12 +16,6 @@ mongoose.connect('mongodb+srv://brain:Brain@we-skill-cluster.wkejp.mongodb.net/d
         console.log('connected to mongoDB ...');
 });
 
-// create person model
-const Person = mongoose.model('persons', {
-    firstname: String,
-    lastname:String,
-    phone:String
-});
 
 server.route({
     method:'POST',
