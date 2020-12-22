@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bvenceslas/HapiApp#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "hapi": "^18.1.0",
     "joi": "^17.3.0",
     "mongoose": "^5.11.8"

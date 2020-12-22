@@ -1,20 +1,25 @@
 const Hapi = require('hapi');
 const mongoose = require('mongoose');
-const joi = require('joi');
 const Person = require('./model/person.model');
+require('dotenv').config();
+const joi = require('joi');
 
 // initialise server
 const server = new Hapi.Server({
-    port: 8000,
-    host: 'localhost'
+    port: 8000 || process.env. PORT,
+    host: 'localhost' || process.env.HOST
 });
 
 // connect to the mongo DB
-mongoose.connect('mongodb+srv://brain:Brain@we-skill-cluster.wkejp.mongodb.net/db_hapi?retryWrites=true&w=majority', 
-    {useCreateIndex:true, useFindAndModify:false, useNewUrlParser: true, useUnifiedTopology: true},
-    () => {
+mongoose.connect(process.env.DB_URI, {
+    useCreateIndex:true, 
+    useFindAndModify:false, 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+    },() => {
         console.log('connected to mongoDB ...');
-});
+    }
+);
 
 
 server.route({
